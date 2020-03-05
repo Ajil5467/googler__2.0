@@ -63,23 +63,23 @@ window.onload = function() {
     // Create quiz instances for each quiz and add them to the quizzes map.
     // The key is the ID of the quiz element, same as what we pass to the Quiz object as the first argument.
     quizzes['quiz-1'] = new Quiz('quiz-1', [
-        'Paul William Walker IV',
+        'paul william walker IV',
 
     ]);
 
     quizzes['quiz-2'] = new Quiz('quiz-2', [
-        'Robert John Downey Jr',
+        'robert john downey jr',
     ]);
 
     quizzes['quiz-3'] = new Quiz('quiz-3', [
-      'Dwayne Johnson',
+      'dwayne johnson',
     ]);
     quizzes['quiz-4'] = new Quiz('quiz-4', [
-      'Thomas Marvolo Riddle',
+      'thomas marvolo riddle',
     ]);
 
     quizzes['quiz-5'] = new Quiz('quiz-5', [
-      'Thomas Cruise',
+      'thomas cruise',
     ]);
 
 
