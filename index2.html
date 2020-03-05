@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <script type="text/javascript" src="scripts/quizlib.1.0.1.min.js"></script>
+        <!-- Dev: <script type="text/javascript" src="../../src/quizlib.js"></script>-->
+        <script type="text/javascript" src="scripts/main.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/quizlib.min.css" media="screen">
+        <!-- Dev: <link rel="stylesheet" type="text/css" href="../../src/quizlib.css" media="screen">-->
+        <link rel="stylesheet" type="text/css" href="styles/stylesheet.css" media="screen">
+
+        <title>Quizlib Multi-Quiz Example</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    </head>
+
+    <body>
+    <h1 class="text-center">
+      <span style="color: #007bff;">G</span>
+      <span style="color: #dc3545;">o</span>
+      <span style="color: #ffc107;">o</span>
+      <span  style="color: #007bff;">g</span>
+      <span style="color: #28a745;">l</span>
+      <span style="color: #dc3545;">e</span>
+      <span style="color: #ffc107;">r </span>
+
+      <span  style="color: #007bff;">2</span>
+      <span>.</span>
+      <span style="color: #ffc107;">0</span>
+    </h1>
+
+<!-- <a href="index1.html">start</a> -->
+
+      <i class="time">07:00</i>
+		<div class="timer">
+			 <span>07</span> : <span>00</span>
+		</div>
+        <!-- Quiz Results -->
+        <!-- For this multi quiz, we'll use the same result element and move it to active quiz when the answer button is pressed. -->
+        <div id="quiz-result" class="card">
+            You Scored <span id="quiz-percent"></span>% - <span id="quiz-score"></span>/<span id="quiz-max-score"></span><br/>
+        </div>
+
+        <!-- Quiz 1 -->
+        <br>
+        <br>
+        <br>
+
+        <div id="quiz-1">
+            <h2>Q 1</h2>
+            <!-- Question 1 -->
+            <div class="card quizlib-question">
+                <div class="quizlib-question-title">1.	The iron giant had a friend who said he will be back in some time but never returned. Who is he? </div>
+                <div class="quizlib-question-answers">
+                    <input type="text" name="q1">
+                    <!-- <input type="text" id="h1" name="q1" /> -->
+                </div>
+            </div>
+        <!-- Answer Button. Here, we pass the ID of the quiz element (the parent of this button) to the showResults function.  -->
+            <button type="button" onclick="showResults(this.parentNode.id);">Check Answer</button>
+        </div>
+<br>
+<br>
+
+        <!-- Quiz 2 -->
+        <div id="quiz-2">
+            <h2>Q 2</h2>
+
+            <!-- Question 2 -->
+            <div class="card quizlib-question">
+                <div class="quizlib-question-title">2.	One of the 6 and the son of the stark who is the great scientist.</div>
+                <div class="quizlib-question-answers">
+                    <input type="text" name="q2">
+                    <input type="text" id="h2" hidden />
+                </div>
+            </div>
+            <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+            <button type="button" onclick="showResults(this.parentNode.id);">Check Answer</button>
+        </div>
+
+<br>
+<br>
+
+        <!-- Quiz 3 -->
+        <div id="quiz-3">
+            <h2>Q 3</h2>
+            <!-- Question 1 -->
+            <div class="card quizlib-question">
+                <div class="quizlib-question-title">3.	The stone from the fast and furious or the pebble from the race to witch mountain is in some or the other way associated to the dead or Mark William.</div>
+                <div class="quizlib-question-answers">
+                    <input type="text" name="q1">
+                    <input type="text" id="h3" hidden />
+                </div>
+            </div>
+
+            <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+            <button type="button" onclick="showResults(this.parentNode.id);">Check Answer</button>
+        </div>
+
+        <!-- quiz 4 -->
+
+        <div id="quiz-4">
+            <h2>Q 4</h2>
+            <!-- Question 1 -->
+            <div class="card quizlib-question">
+                <div class="quizlib-question-title">3.	They say he must not be named but he likes snakes and is a devil who had a beautiful past... he is called the nazi hitler or mummy imhotep , i prefer to call him nose-less devil.</div>
+                <div class="quizlib-question-answers">
+                    <input type="text" name="q1">
+                    <input type="text" id="h3" hidden />
+                </div>
+            </div>
+
+            <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+            <button type="button" onclick="showResults(this.parentNode.id);">Check Answer</button>
+        </div>
+
+        <!-- quiz-5 -->
+        <div id="quiz-5">
+            <h2>Q 5</h2>
+            <!-- Question 1 -->
+            <div class="card quizlib-question">
+                <div class="quizlib-question-title">4.	The ghost protocol and cia have to do something to do with one shot</div>
+                <div class="quizlib-question-answers">
+                    <input type="text" name="q1">
+                    <input type="text" id="h3" hidden />
+                </div>
+            </div>
+
+            <!-- Answer Button. Note that the showResults call is exactly the same as question 1. Nice!  -->
+            <button type="button" onclick="showResults(this.parentNode.id);">Check Answer</button>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+
+    $(document).ready(function () {
+      var time = $('.time').text();
+      var interval = setInterval(function() {
+        var count = time.split(':');
+        var min = count[0];
+        var sec = count[1];
+        var counter = $('.timer').find("span");
+        counter.eq(0).text(min);
+        counter.eq(1).text(sec);
+
+        if (min == 0 && sec <= 10) {
+
+        }
+        if (sec == 0) {
+          if (min != 0) {
+            counter.eq(0).text(min--);
+            sec = 59;
+          }
+        }
+        counter.eq(0).text(min);
+        counter.eq(1).text(--sec);
+        time = counter.eq(0).text()+":"+counter.eq(1).text();
+                $(".time").text(time);
+                if (min == 0 && sec == 0) {
+                    clearInterval(interval);
+                    alert("Time Up");
+                    $("input").prop('disabled', true);
+                }
+            },1000);
+
+
+    });
+
+    // $(document).ready(function() {
+    //   $( "input:text" ).focusout(function() {
+    //     var hash = CryptoJS.MD5($("input:text").val());
+    //     $("#h1").val(hash);
+    //   })
+    // });
+
+    </script>
+</html>
